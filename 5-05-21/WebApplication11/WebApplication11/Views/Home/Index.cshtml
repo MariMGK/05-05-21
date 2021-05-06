@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<h2>Details</h2>
+<div style="margin-top:50px;">
+    <div align="right">
+        <a href="/Home/ExporttoExcel">Export to Excel</a>
+    </div>
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th>Department Id</th>
+                <th>Department Name</th>
+
+            </tr>
+        </thead>
+        @{
+            foreach (System.Data.DataRow dr in ViewBag.details.Rows)
+            {
+                <tr>
+                    <td>@dr["DepartmentID"]</td>
+
+                    <td>@dr["DepartmenName"]</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
